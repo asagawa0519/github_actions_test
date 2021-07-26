@@ -23,7 +23,7 @@ jobs:
       - name: bundler set up
         run: |
           gem install bundler
-          bundle install
+        　bundle config set path 'vendor/bundle'
+          bundle check || bundle install -j4
       - name: run rubocop
         run: bundle exec rubocop
-
